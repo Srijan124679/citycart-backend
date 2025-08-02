@@ -15,9 +15,14 @@
   const port = process.env.PORT || 8080;
 
   app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
-    credentials: true
-  }));
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://city-cart-mu.vercel.app", // Your deployed frontend
+    "https://city-cart.vercel.app"     // Optional: any custom vercel domain
+  ],
+  credentials: true
+}));
 
   app.use(cookieParser()); 
   app.use(express.json());
