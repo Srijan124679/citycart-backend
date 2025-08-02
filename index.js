@@ -32,7 +32,8 @@ app.use("/api/product", productRoutes);
 app.use("/api/cart",cartRoutes);
 
 connectDb().then(() => {
-  app.listen(port, () => {
-    console.log(`Server started at http://localhost:${port}`);
-  });
+  app.listen(port, '0.0.0.0', () => {
+  console.log(`Server started at http://0.0.0.0:${port}`);
+});
+
 });
